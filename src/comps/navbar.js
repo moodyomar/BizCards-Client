@@ -49,8 +49,7 @@ function NavBar(props) {
             <React.Fragment>
               <Link to="/userInfo">User Info</Link>
               <Link to="/favorites">My Favorites</Link>
-              {/* ? - אם עדיין לפני הנקודה האובייקט או המאפיין
-        לא קיימים או נאל לא יחזיר שגיאה */}
+              {/* ? - if yet before the dot (.) the object/prop doesnt exist or null it wont return error */}
               {user?.biz && <Link to="/myBizCards">My Cards</Link>}
               <Link onClick={logOut} to="#" className="text-danger">Log out</Link>
             </React.Fragment>

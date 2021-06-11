@@ -22,8 +22,6 @@ function FavoriteCards(props){
     }
   }
 
-  //TODO: add redux to update
-
   return(
     <div>
       <PageHeader title="Your favorite business cards" />

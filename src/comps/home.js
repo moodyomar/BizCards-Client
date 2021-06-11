@@ -20,9 +20,7 @@ doApi(url);
 
 const doApi = async(url) => { 
   let data = await doApiGet(url);
-  console.log(data);
   setCards_ar(data);
-  
 }
 
   return(

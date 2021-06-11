@@ -11,12 +11,12 @@ function ProtectedRoute(props) {
     let data = await checkIfUser()
     console.log(data);
 
-// בדיקה אם במקרה קיבלנו את הפרופס ביז 
-    // שאומר שהראוט הנל לא מספיק להיות רק רשום
-    // אלא המשתמש חייב להיות עסק
+// check if we recived the props biz
+    // which mean its not enough to be registed/user
+    // it need to be a busniess as well.
     if(props.bizRoute){
-      // כדי לבדוק אם המשתמש הוא ביז
-      // חייב לשלוף את המידע קודם מהסרבס
+      //check the user if its business user
+      // firstly must pull the data from user service
       let user = getUserData();
       if(!user.biz){
         toast.warning("You must be business");
