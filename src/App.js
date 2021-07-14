@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import './App.css';
-import './css_comps/header_nav.css'
-import './css_comps/cards.css'
+import './css/header_nav.css'
+import './css/cards.css'
 import NavBar from './comps/navbar';
 import Home from './comps/home';
 import About from './comps/about';
@@ -38,26 +38,26 @@ function App() {
     <Router>
       <header>
         {/*  */}
-       { user && <Route path="/" component={NavBar} /> }
+        {user && <Route path="/" component={NavBar} />}
       </header>
       {/* will not show main tag until it get data for user */}
-      { user &&
-      <main>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/signup" component={SignUpClient} />
-          <Route exact path="/login" component={Login} />
-          {/* <Route exact path="/userInfo" component={UserInfo}/> */}
-          <ProtectedRoute path="/userInfo" comp={UserInfo} />
-          <ProtectedRoute path="/favorites" comp={FavoriteCards} />
-          <ProtectedRoute path="/myBizCards" comp={MyCards} bizRoute={true} />
-          <ProtectedRoute path="/addCard" comp={AddCard} bizRoute={true} />
-          <ProtectedRoute path="/editCard/:id" comp={EditCard} bizRoute={true} />
-          <Route path="/" component={Page404} />
-        </Switch>
-      </main>
-}
+      {user &&
+        <main>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+            <Route exact path="/signup" component={SignUpClient} />
+            <Route exact path="/login" component={Login} />
+            {/* <Route exact path="/userInfo" component={UserInfo}/> */}
+            <ProtectedRoute path="/userInfo" comp={UserInfo} />
+            <ProtectedRoute path="/favorites" comp={FavoriteCards} />
+            <ProtectedRoute path="/myBizCards" comp={MyCards} bizRoute={true} />
+            <ProtectedRoute path="/addCard" comp={AddCard} bizRoute={true} />
+            <ProtectedRoute path="/editCard/:id" comp={EditCard} bizRoute={true} />
+            <Route path="/" component={Page404} />
+          </Switch>
+        </main>
+      }
       <footer>
         <Footer />
       </footer>

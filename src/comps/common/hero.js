@@ -1,16 +1,16 @@
 import React from 'react';
-import "../../css_comps/header_nav.css"
+import "../../css/header_nav.css"
 
-const Hero = ({imgPath,heroTitle}) => { 
+const Hero = ({ imgPath, heroTitle }) => {
 
-return(
+  return (
 
-<div className="hero" style={{backgroundImage: `url(${imgPath})`}}>
-  <h1 className="display-2 heroTitle">{heroTitle}</h1>
-</div>
+    <div className="hero" style={{ backgroundImage: `url(${imgPath})` }}>
+      <h1 className="display-2 heroTitle">{heroTitle}</h1>
+    </div>
 
 
-)
+  )
 }
 
 export const heroImg = '/images/hero.jpeg'
