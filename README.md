@@ -1,7 +1,8 @@
 # Getting Started with Create React App
 
 
-Live website on Netlify: http://macard.herokuapp.com
+My own API on Heroku: http://macard.herokuapp.com
+Live website on Netlify: https://macards.netlify.app
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
