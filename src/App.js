@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import './App.css';
-import './css/header_nav.css'
-import './css/cards.css'
 import NavBar from './comps/navbar';
 import Home from './comps/home';
 import About from './comps/about';
