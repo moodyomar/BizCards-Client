@@ -36,13 +36,13 @@ function App() {
 
   return (
     <Router>
-      <header className="container-fluid shadow-sm">
+      <header>
         {/*  */}
        { user && <Route path="/" component={NavBar} /> }
       </header>
       {/* will not show main tag until it get data for user */}
       { user &&
-      <main className="container" style={{ minHeight: "81vh" }}>
+      <main>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />

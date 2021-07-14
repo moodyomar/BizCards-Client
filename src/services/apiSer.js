@@ -1,9 +1,7 @@
 import axios from "axios"
 
-// שנעלה לשרת יתחליף לכתובת של השרת
 export const API_URL = "https://macard.herokuapp.com";
-// export const API_URL = "https://ynet.co.il";
-export const PER_PAGE = 5;
+export const PER_PAGE = 6;
 
 export const doApiGet = async (_url) => {
   try {

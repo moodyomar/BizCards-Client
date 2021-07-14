@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import PageHeader from '../common/pageHeader';
 import { Link } from 'react-router-dom';
+import {FaTrashAlt,FaEdit} from 'react-icons/fa'
 import { API_URL, doApiMethod } from '../../services/apiSer';
 import { toast } from 'react-toastify';
+import Hero, { heroImg } from '../common/hero';
 
 function MyCards(props) {
 
@@ -30,9 +32,11 @@ function MyCards(props) {
   }
 
   return (
-    <div className="container">
+    <div className="mb-5">
+      <Hero imgPath={heroImg} heroTitle={'Your Cards'} />
       <PageHeader title="Cards you've added" />
-      <Link to="addCard" className="btn btn-success">Add new Biz Card</Link>
+      <div className="p-5">
+      <Link to="addCard" className="btn btn-purple mb-3">Add new Biz Card</Link>
       <table className="table table-striped">
         <thead>
           <tr>
@@ -55,17 +59,18 @@ function MyCards(props) {
                 <td>{item.bizPhone}</td>
                 <td>
                 <Link to={"/editCard/"+item._id}>
-                    <button>edit</button>
+                    <button className="btn hoverScale  "><FaEdit className="fs-5 my-auto" /></button>
                     </Link>
-                  <button className="ms-2" style={{ background: "pink" }} onClick={() => {
+                  <button className="btn hoverScale text-danger  ms-2" onClick={() => {
                       delCard(item._id);
-                    }}>del</button>
+                    }}><FaTrashAlt className="fs-5" /></button>
                 </td>
               </tr>
             )
           })}
         </tbody>
       </table>
+      </div>
     </div>
   )
 }

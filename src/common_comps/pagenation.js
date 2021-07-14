@@ -14,18 +14,16 @@ doApi()
 const doApi = async() => { 
   let url = API_URL + props.urlOfItemNum
   let data = await doApiGet(url);
-  console.log(data.count);
   setCountPage(Math.ceil(data.count / PER_PAGE))
   
 }
 
   return(
-    <div>
-    <span>Page: </span>
+    <div className="text-center my-4">
     {/* maap loop without a real array. Making ar with Array object */}
      {[...Array(countPage)].map((item,i) => {
        return(
-       <Link key={i} to={props.linkTo+(i+1)} className="btn btn-dark me-1" >{i + 1}</Link>
+       <Link key={i} to={props.linkTo+(i+1)} className="btn btn-purple me-1" >{i + 1}</Link>
        )
      }) }
   </div>

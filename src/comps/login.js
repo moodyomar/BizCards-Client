@@ -5,6 +5,7 @@ import { API_URL, doApiMethod } from '../services/apiSer';
 import { useHistory } from "react-router-dom"
 import PageHeader from './common/pageHeader';
 import { updateUserData } from '../services/userSer';
+import Hero, { heroImg } from './common/hero';
 
 
 function Login(props) {
@@ -43,10 +44,10 @@ function Login(props) {
   let passwordRef = register("password", { required: true, minLength: 3 });
 
   return (
-    <div className="container">
-
-      <form onSubmit={handleSubmit(onSubForm)} className="col-lg-6 mx-auto shadow p-3 rounded mt-3">
+    <>
+      <Hero imgPath={heroImg} heroTitle={'Welcome Back'} />
         <PageHeader title="Log in" />
+      <form onSubmit={handleSubmit(onSubForm)} className="col-lg-6 mx-auto shadow p-3 rounded my-5">
         <div>
           <label>Email:</label>
           <input {...emailRef} type="text" className="form-control" />
@@ -58,9 +59,9 @@ function Login(props) {
           {errors.password && <span className="text-danger">Enter min 3 charts password</span>}
         </div>
 
-        <button className="btn btn-success mt-3">Log in</button>
+        <button className="btn btn-purple mt-3">Log in</button>
       </form>
-    </div>
+    </>
   )
 }
 

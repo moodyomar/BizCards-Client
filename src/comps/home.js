@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PageHeader from './common/pageHeader';
+import Hero, { heroImg } from './common/hero';
 import CardsList  from './cardsList';
 import { API_URL, doApiGet } from '../services/apiSer';
 import Pagenation from '../common_comps/pagenation';
@@ -25,12 +26,13 @@ const doApi = async(url) => {
 
   return(
     <div>
-      <PageHeader title="Welcome to home page" />
+      <Hero imgPath={heroImg} heroTitle={'Business Meetup'} />
+      <PageHeader title="Level Up Your Business" />
    {/*  urlOfItemNum-> url that will return the amout of quiries
       linkTo -> url in client side that will send him each button
       */}
-      <Pagenation urlOfItemNum="/cards/totalCards" linkTo="/?page="   />
       <CardsList ar={cards_ar} />
+      <Pagenation urlOfItemNum="/cards/totalCards" linkTo="/?page="   />
     </div> 
   )
 }

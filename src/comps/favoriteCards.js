@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { API_URL, doApiMethod } from '../services/apiSer';
 import PageHeader from './common/pageHeader';
 import CardsList  from './cardsList';
+import Hero, { heroImg } from './common/hero';
 
 function FavoriteCards(props){
   let [cards_ar,setCardsAr] = useState([]);
@@ -23,10 +24,11 @@ function FavoriteCards(props){
   }
 
   return(
-    <div>
-      <PageHeader title="Your favorite business cards" />
+    <>
+      <Hero imgPath={heroImg} heroTitle={'Your Favorites'} />
+      <PageHeader title="Favorite Business Cards" />
       <CardsList ar={cards_ar}/>
-    </div> 
+    </> 
   )
 }
 

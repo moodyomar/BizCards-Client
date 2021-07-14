@@ -8,13 +8,10 @@ function NavBar(props) {
   let history = useHistory()
 
   useEffect(() => {
+    setShowMobileNav(false);
     setUser(getUserData)
   }, [props.location])
 
-  // מעלים את התפריט נאב במצב מובייל לאחר שלחצנו על לינק
-  const hideNavMobile = () => {
-    setShowMobileNav(false);
-  }
 
   const logOut = async () => {
     // alert("log out");
@@ -25,19 +22,18 @@ function NavBar(props) {
   }
 
   return (
-    <div className="container nav_top p-2">
-      <div className="row align-items-center">
-        <div className="logo col-lg-3 d-flex justify-content-between align-items-center">
-          <h2 className="text-danger">Cards project</h2>
-          <div className="burger" onClick={() => {
-            setShowMobileNav(!showMobileNav);
-          }}>
-
-            <i className="fa fa-bars fs-2" aria-hidden="true"></i>
-          </div>
+    <>
+  <div className="topNav container-fluid shadow bg-dark">
+    <div className="row align-items-center">
+      <div className="logo col-lg-3 d-flex justify-content-between align-items-center">
+        <h2 className="logo">BizUp</h2>
+        <div className="burger text-white" onClick={() => {
+          setShowMobileNav(!showMobileNav);
+        }}>
+          <i className="fa fa-bars fs-2" aria-hidden="true"></i>
         </div>
-        {/* style -> with condition */}
-        <nav onClick={hideNavMobile} className={"col-lg-9 text-end"} style={{ display: showMobileNav && "block" }} >
+      </div>
+      <nav className="col-lg-9 bg-dark text-end" style={{ transform: showMobileNav && "translateX(0%)" }}>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
           {!localStorage["tok"] ?
@@ -47,10 +43,9 @@ function NavBar(props) {
             </React.Fragment>
             :
             <React.Fragment>
-              <Link to="/userInfo">User Info</Link>
-              <Link to="/favorites">My Favorites</Link>
               {/* ? - if yet before the dot (.) the object/prop doesnt exist or null it wont return error */}
               {user?.biz && <Link to="/myBizCards">My Cards</Link>}
+              <Link to="/userInfo">Profile</Link>
               <Link onClick={logOut} to="#" className="text-danger">Log out</Link>
             </React.Fragment>
           }
@@ -58,6 +53,7 @@ function NavBar(props) {
         </nav>
       </div>
     </div>
+    </>
   )
 }
 

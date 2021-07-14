@@ -3,7 +3,9 @@ import {useForm} from "react-hook-form";
 import {useHistory} from "react-router-dom";
 import { toast } from 'react-toastify';
 import { API_URL, doApiMethod } from '../services/apiSer';
+import Hero, { heroImg } from './common/hero';
 import PageHeader from './common/pageHeader';
+
  
 function SignUpClient(props){
   let {register , handleSubmit ,  formState: { errors } } = useForm();
@@ -44,10 +46,10 @@ function SignUpClient(props){
   let checkRef = register("biz",{required:false})
 
   return(
-    <div className="container">
-    
-    <form onSubmit={handleSubmit(onSubForm)} className="col-lg-6 mx-auto shadow p-3 rounded mt-3">
+    <div>
+    <Hero imgPath={heroImg} heroTitle={'Join Us Today'} />
       <PageHeader title="Sign up new user"/>
+    <form onSubmit={handleSubmit(onSubForm)} className="col-lg-6 mx-auto shadow p-3 rounded my-5">
       <div>
         <label>Email:</label>
         <input {...emailRef} type="text" className="form-control" />
@@ -67,7 +69,7 @@ function SignUpClient(props){
         <input {...checkRef}  type="checkbox" className="form-check-input me-2" />
         <label>I am Business</label>
       </div>
-      <button className="btn btn-info mt-3">Sign up</button>
+      <button className="btn btn-purple mt-3">Sign up</button>
     </form>
   </div>
   )
