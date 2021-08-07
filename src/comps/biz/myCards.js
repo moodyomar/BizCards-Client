@@ -5,6 +5,7 @@ import {FaTrashAlt,FaEdit} from 'react-icons/fa'
 import { API_URL, doApiMethod } from '../../services/apiSer';
 import { toast } from 'react-toastify';
 import Hero, { heroImg } from '../common/hero';
+import '../../css/myCards.css'
 
 function MyCards(props) {
 
@@ -37,6 +38,7 @@ function MyCards(props) {
       <PageHeader title="Cards you've added" />
       <div className="p-5">
       <Link to="addCard" className="btn btn-purple mb-3">Add new Biz Card</Link>
+    <div className="tableResponsive">
       <table className="table table-striped">
         <thead>
           <tr>
@@ -51,8 +53,8 @@ function MyCards(props) {
         <tbody>
           {ar.map((item,i) => {
             return (
-              <tr key={i}>
-                <td>{i + 1}</td>
+              <tr  key={i}>
+                <td className="numsTd">{i + 1}</td>
                 <td>{item.bizName}</td>
                 <td>{item.bizDescription.substr(0, 40)}...</td>
                 <td>{item.bizAddress}</td>
@@ -70,6 +72,7 @@ function MyCards(props) {
           })}
         </tbody>
       </table>
+      </div>
       </div>
     </div>
   )
