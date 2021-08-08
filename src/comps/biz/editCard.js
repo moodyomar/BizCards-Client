@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useHistory } from "react-router-dom"
 import { toast } from "react-toastify";
 import { API_URL, doApiGet, doApiMethod } from '../../services/apiSer';
+import PageHeader from '../common/pageHeader';
 
 
 function EditCard(props) {
@@ -60,8 +61,8 @@ function EditCard(props) {
 
   return (
     <div>
-      <h1>Edit card:</h1>
-      <form onSubmit={handleSubmit(onSubForm)} className="row">
+      <PageHeader title="Edit Card" />
+      <form onSubmit={handleSubmit(onSubForm)} className="row p-5">
         <div className="col-lg-6">
           <label>*Biz name</label>
           <input {...nameRef} type="text" className="form-control mt-2" />
