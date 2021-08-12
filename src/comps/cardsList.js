@@ -41,11 +41,11 @@ function CardsList({ar}) {
   }
 
   return (
-    <div className="row justify-content-center">
+    <div className="row justify-content-center" id="cardsLayout">
       {ar.map((item) => {
         let bg = item.bizImage?.length > 2 ? item.bizImage : '/images/defaultImg.jpg'
         return (
-          <div className="card-list my-3">
+          <div className="card-list my-4">
     <article className="card">
       <figure className="card-image">
         <div style={{ backgroundImage: `url(${bg})` }} alt={`${item.bizName} image`} className="bizImage" />

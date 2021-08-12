@@ -26,6 +26,9 @@ min-width: 250px;
 	 position: relative;
 	 transition: 0.15s ease-in;
 }
+#cardsLayout{
+  margin: 0 100px;
+}
  .card:hover, .card:focus-within {
 	 box-shadow: 0 0 0 2px var(--primary), 0 10px 60px 0 rgba(0, 0, 0, .1);
 	 transform: translatey(-5px);
@@ -35,7 +38,6 @@ min-width: 250px;
 	 overflow: hidden;
 }
  .card-header {
-	 /* margin-top: 0.5rem; */
    height: 86px;
 	 display: flex;
 	 align-items: center;
@@ -110,14 +112,21 @@ min-width: 250px;
 	 height: 1em;
 	 margin-right: 0.25em;
 }
- 
+
 @media screen and (max-width: 600px) {
   .card-list {
     width: 90%;
     max-width: 400px;
- }
- .mobileRow{
-   display: grid;
-   place-items: center;
- }
+  }
+  .mobileRow{
+    display: grid;
+    place-items: center;
+  }
+}
+
+@media(min-width:1700px){
+
+  .card-list{
+    margin: 0px 30px;
+  }
 }
