@@ -21,7 +21,7 @@ color:var(--primary);
 
 .hero{
   top: 50px;
-  min-height: 45vh;
+  min-height: 55vh;
 background-size: cover;
 display: grid;
 place-items: center;

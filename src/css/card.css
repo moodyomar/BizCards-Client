@@ -118,6 +118,9 @@ min-width: 250px;
     width: 90%;
     max-width: 400px;
   }
+  #cardsLayout{
+    margin: 0 0px;
+  }
   .mobileRow{
     display: grid;
     place-items: center;

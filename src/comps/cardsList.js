@@ -56,7 +56,7 @@ function CardsList({ar}) {
           <small className="text-secondary">{item.bizDescription}</small>
         </div>
         {userData._id ? showBtnFav(item) :
-  <small className="text text-danger">* Login to add to favorite</small>}
+  <small className="text text-danger">* Login first  </small>}
         
       </div>
       <div className="card-body">
