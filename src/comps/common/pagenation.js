@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { API_URL, doApiGet, PER_PAGE } from '../services/apiSer';
+import { API_URL, doApiGet, PER_PAGE } from '../../services/apiSer';
 import {Link} from 'react-router-dom';
 
 

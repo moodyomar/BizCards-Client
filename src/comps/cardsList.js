@@ -46,7 +46,7 @@ function CardsList({ar}) {
         let bg = item.bizImage?.length > 2 ? item.bizImage : '/images/defaultImg.jpg'
         return (
           <div className="card-list my-4">
-    <article className="card">
+    <article className="card" data-aos="zoom-in-down">
       <figure className="card-image">
         <div style={{ backgroundImage: `url(${bg})` }} alt={`${item.bizName} image`} className="bizImage" />
       </figure>

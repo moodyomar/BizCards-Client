@@ -3,11 +3,16 @@ import PageHeader from './common/pageHeader';
 import Hero, { heroImg } from './common/hero';
 import CardsList  from './cardsList';
 import { API_URL, doApiGet } from '../services/apiSer';
-import Pagenation from '../common_comps/pagenation';
-
+import Pagenation from './common/pagenation';
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 
 function Home(props){
+  AOS.init({
+    offset: 200, // offset (in px) from the original trigger point
+    duration: 400, // values from 0 to 3000, with step 50ms
+  });
 
 let [cards_ar,setCards_ar] = useState([])
 
